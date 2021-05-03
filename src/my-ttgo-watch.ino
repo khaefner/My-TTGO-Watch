@@ -42,6 +42,8 @@
 #include "app/FindPhone/FindPhone.h"
 #include "app/gps_status/gps_status.h"
 #include "app/osmmap/osmmap_app.h"
+#include "app/example_app/example_app.h"
+#include "app/ocf/ocf_app.h"
 
 void setup() {
     /**
@@ -71,11 +73,13 @@ void setup() {
     alarm_clock_setup();
     activity_app_setup();
     gps_status_setup();
-    sailing_setup();
+    //sailing_setup();
     osmand_app_setup();
-    IRController_setup();
-    fxrates_app_setup();
-    powermeter_app_setup();
+    //example_app_setup();
+    ocf_app_setup();
+    //IRController_setup();
+    //fxrates_app_setup();
+    //powermeter_app_setup();
 	FindPhone_setup();
     /**
      * post hardware setup
