@@ -25,10 +25,13 @@
 #include <esp_wifi.h>
 #include <esp_wps.h>
 
+
 #include "wifictl.h"
 #include "powermgm.h"
 #include "callback.h"
 #include "config/wifictlconfig.h"
+
+
 
 #ifdef ENABLE_WEBSERVER
     #include "utils/webserver/webserver.h"
@@ -64,6 +67,8 @@ void wifictl_load_network( void );
 void wifictl_save_config( void );
 void wifictl_load_config( void );
 void wifictl_Task( void * pvParameters );
+
+static const int IPV6_CONNECTED_BIT = BIT1;
 
 void wifictl_setup( void ) {
     /*
@@ -126,6 +131,7 @@ void wifictl_setup( void ) {
         wifictl_clear_event( WIFICTL_OFF_REQUEST | WIFICTL_ON_REQUEST | WIFICTL_SCAN | WIFICTL_WPS_REQUEST  );
         wifictl_send_event_cb( WIFICTL_CONNECT, (void *)WiFi.SSID().c_str() );
         wifictl_send_event_cb( WIFICTL_CONNECT_IP, (void *)WiFi.localIP().toString().c_str() );
+        wifictl_send_event_cb(WIFICTL_CONNECT_IP6, (void *)WiFi.localIPv6().toString().c_str() );
         #ifdef ENABLE_WEBSERVER
         if ( wifictl_config.webserver ) {
             asyncwebserver_start();

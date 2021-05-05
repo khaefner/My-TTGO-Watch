@@ -31,6 +31,11 @@
 #include "gui/app.h"
 #include "gui/widget.h"
 
+
+
+
+
+
 uint32_t ocf_app_main_tile_num;
 uint32_t ocf_app_setup_tile_num;
 

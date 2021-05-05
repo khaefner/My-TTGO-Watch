@@ -31,7 +31,7 @@
     #define ESP_MANUFACTURER            "ESPRESSIF"
     #define ESP_MODEL_NUMBER            "ESP32"
     #define ESP_MODEL_NAME              "LILYGO T-WATCH2020 V1"
-    #define ESP_DEVICE_NAME             "ESP STATION"
+    #define ESP_DEVICE_NAME             "Kyle's Watch"
 
     enum wifictl_event_t {
         WIFICTL_CONNECT                = _BV(0),
@@ -47,7 +47,8 @@
         WIFICTL_WPS_FAILED             = _BV(10),
         WIFICTL_SCAN                   = _BV(11),
         WIFICTL_FIRST_RUN              = _BV(12),
-        WIFICTL_AUTOON                 = _BV(13)
+        WIFICTL_AUTOON                 = _BV(13),
+        WIFICTL_CONNECT_IP6             = _BV(14),
     };
 
     /**

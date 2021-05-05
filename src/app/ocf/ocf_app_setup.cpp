@@ -30,6 +30,8 @@
 #include "gui/widget_factory.h"
 #include "gui/widget_styles.h"
 
+
+
 lv_obj_t *ocf_app_setup_tile = NULL;
 lv_style_t ocf_app_setup_style;
 
